@@ -1,0 +1,57 @@
+.footer {
+    color: #97a0a7;
+}
+ 
+.cert_icon {
+    width: 145px;
+    height: 45px;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.copyright {
+    font-family: Gotham-Book, Arial, sans-serif;
+    font-size: 12px;
+    color: #97a0a7;
+    text-align: center;
+    border-top: 1px solid #eee;
+    line-height: 1.8em;
+    padding: 30px 15px;
+    width: 100%;
+}
+
+.footer_logo {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    margin-bottom: 10px;
+    padding-right: 20px;
+}
+
+.footer_logo .logo_image {
+    height: 60px;
+}
+
+.logo_link {
+    border: 0;
+    display: block;
+    text-align: center;
+}
+
+.footer_menu {
+    margin: 25px 0 10px;
+    flex: 2 1 auto;
+}
+
+.footer_item {
+    font-size: 15px;
+    font-family: Arial, sans-serif;
+    display: inline-block;
+}
+
+.footer_item_link {
+    color: #97a8a7;
+    text-decoration: none;
+}
+.footer_item_link:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,140 @@
+.body_container {
+    background-color: rgb(255, 255, 255);
+    background-image: linear-gradient(0deg, #147AB8ff, #032F6Cff);
+    background-position-x: 75%;
+    background-position-y: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-bottom: 1px solid #f0ebe7;
+}
+
+.contents_container {
+    padding: 0px 40px;
+}
+
+.left_contents {   
+    margin-top: 50px;
+}
+
+.right_contents {   
+    margin-top: 10px;
+}
+
+.heading_container {
+    padding: 50px 50px 0px 50px;
+}
+
+.heading {
+    font-size: 50px;
+    color: #fff;
+    line-height: 56px;
+}
+
+.subheading {
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+    line-height: 56px;
+}
+
+.label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    line-height: 56px;
+    margin-left: 10px;
+}
+ 
+ul.has-suggestions {
+    display: block;
+}
+
+.link {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #032F6Cff !important;
+}
+
+.list-group-item {
+    border: none !important;
+}
+
+option[value="0"] {
+    border-radius: 55px !important;
+}
+
+option:hover {
+    background-color: gray;
+}
+
+.client_photo {
+    background-size: cover;
+    border-radius: 50%;
+    -ms-flex: 0 0 90px;
+    flex: 0 0 90px;
+    height: 90px;
+    width: 90px;
+}
+
+.client_heading {
+    font-size: 25px;
+    color: #fff;
+}
+
+.client_label {
+    font-size: 18px;
+    color: #fff;
+    margin-top: 10px;
+}
+
+.client_review {
+    font-size: 16px;
+    font-style: italic;
+    color: #fff;
+}
+
+.review_link {
+    cursor: pointer;
+    color: orange;
+    margin-top: 10px;
+}
+
+.star {
+    font-size: 20px;
+    color: #dc8721;
+    margin-right: 10px;
+}
+
+.star_gray {
+    font-size: 20px;
+    color: gray;
+    margin-right: 10px;
+}
+
+.border_btm {
+    border-bottom: 1px solid #C2C2C4;
+}
+
+.div_scroll {
+    height:200px;
+    overflow:scroll;
+    overflow-x:hidden;
+}
+
+.input_numbering {
+    position: absolute; 
+    margin-top: 8px; 
+    margin-left: 5px;
+    color: orange; 
+}
+
+.color_orange {
+    color: orange; 
+}
+
+.pl_50 {
+    padding-left: 50px;
+}

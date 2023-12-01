@@ -1,0 +1,48 @@
+.header {
+    background: #fff;
+    font-weight: bold;
+    color: #032c6b;
+    height: 77px;
+    position: relative;
+    margin-top: 30px;
+}
+
+.header_container {
+    padding-top: 20px;
+	padding-left: 50px;
+    padding-right: 50px;
+}
+
+.header_logo {
+    max-width: 300px;
+    width: 100%;
+}
+
+.header_text {
+    font-family: Gotham-Book, Arial, sans-serif;
+    font-weight: bolder;
+    margin-top: 20px;
+}
+ 
+.header_right_text {
+    font-family: Gotham-Book, Arial, sans-serif;
+    font-size: 16px;
+    align-items: center;
+    display: flex;
+    height: 35px;
+    justify-content: flex-end;
+    justify-self: end;
+    min-width: 300px;
+    position: relative;
+	padding-bottom: 10px;
+    color: #000;;
+} 
+  
+ul li::marker {
+	content: '✓';
+	color: green;
+}
+
+ul li {
+	padding-left : 5px;
+}

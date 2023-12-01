@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>LegalMatch</title>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+<link href="css/bootstrap.min.css" rel="stylesheet"/>
+<link href="css/header.css" rel="stylesheet"/>
+<link href="css/body.css" rel="stylesheet"/>
+<link href="css/modal.css" rel="stylesheet"/>
+<link href="css/footer.css" rel="stylesheet"/>
+<script src="js/main.js"></script>
+<script src="js/autocomplete.js"></script>
+<script src="js/modal.js"></script>
+</head>
+<body>
+    <!--HEADER START-->
+    <header class="header">
+        <div class="row mb-3 header_container">
+            <div class="col header_logo">
+                <img src="img/md.svg" alt="LegalMatch Logo">
+            </div>
+            <div class="col header_text">
+                <div>FIND THE RIGHT LAWYER NOW</div>
+            </div>
+            <div class="col header_right_text">
+                <ul>
+                    <li>No fee to present your case</li>
+                    <li>Choose from lawyers in your area</li>
+                    <li>A 100% confidential service</li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!--HEADER END-->
+
+    <!--MAIN BODY START-->
+    <div class="body_container">
+        <div class="row heading_container">
+            <div class="heading">
+                Find a Lawyer for your Legal Issue
+            </div>
+            <div class="subheading">
+                Fast, Free and Confidential
+            </div>
+        </div>
+        <div class="row contents_container">
+            <div class="col left_contents">
+                <!--Zip Code-->
+                <div class="zipcode_container w-75">
+                    <div class="label">
+                        Enter Zip Code or City:
+                    </div>
+                    <div class="">
+
+                        <span class="fa-stack fa-1x input_numbering">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <strong class="fa-stack-1x text-light">1</strong>
+                        </span>
+                        <input type="text" class="form-control form-control-lg rounded-pill pl_50" id="zipcode"
+                                placeholder="Does not have to be where you live">
+                        <div class="suggestions">
+                            <ul class="dropdown-menu"></ul>
+                        </div>
+                    </div>
+                </div>
+                <!--Category-->
+                <div class="category_container w-75">
+                    <div class="label">
+                        Choose a category:
+                    </div>
+                    <div class="">
+                        <span class="fa-stack fa-1x input_numbering">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <strong class="fa-stack-1x text-light">2</strong>
+                        </span>
+                        <select onclick="openModal('main-categories', this)" onload="loadMainCategories();" id="mainCategory" 
+                        class="form-select form-select-lg mb-3 rounded-pill text-muted h6 pl_50">
+                            <option selected="selected">Click to choose a legal category</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <div class="label">
+                        Can't find your category? <span class="link" onclick="openModal('other-categories', null)"> Click here. </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col right_contents">
+                <div class="row mb-3 pb-3 client_heading">
+                    Clients review LegalMatch lawyers
+                </div>
+                <div class="row border_btm mb-3 pb-3">
+                    <div class="col-3">
+                        <div class="client_photo" style="background-image:url(img/client2.jpg)"></div>
+                        <div>
+                            <h3 class="client_label">Mitchell M.</h3>
+                            <div class="client_label">Cherry Hill, NJ</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="row mb-3">
+                            <div class="col-3 client_label">
+                                Family Law 
+                            </div>
+                            <div class="col star_ratings">
+                                <i class="fa fa-star star"></i>
+                                <i class="fa fa-star star"></i>
+                                <i class="fa fa-star star"></i>
+                                <i class="fa fa-star star"></i>
+                                <i class="fa fa-star star"></i>
+                            </div>
+                        </div>
+                        <div class="row client_review">
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..."
+                        </div>
+                        <div class="row text-end">
+                            <span class="review_link" onclick="openModal('read-review', null)"> Read Review <i class="fa fa-book-open"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row border_btm mb-3 pb-3">
+                    <div class="col-3">
+                        <div class="client_photo" style="background-image:url(img/client1.jpg)"></div>
+                        <div>
+                            <h3 class="client_label">Joel C.</h3>
+                            <div class="client_label">Little Rock, AK</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="row mb-3">
+                            <div class="col-3 client_label">
+                                Job & Employment Law 
+                            </div>
+                            <div class="col star_ratings">
+                                <i class="fa fa-star star"></i>
+                                <i class="fa fa-star star"></i>
+                                <i class="fa fa-star star"></i>
+                                <i class="fa fa-star star"></i>
+                                <i class="fa fa-star star"></i>
+                            </div>
+                        </div>
+                        <div class="row client_review">
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..."
+                        </div>
+                        <div class="row text-end">
+                            <span class="review_link" onclick="openModal('read-review', null)"> Read Review <i class="fa fa-book-open"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3 pb-3">
+                    <div class="col-3">
+                        <div class="client_photo" style="background-image:url(img/client3.jpg)"></div>
+                        <div>
+                            <h3 class="client_label">Brigida R.</h3>
+                            <div class="client_label">Dallas, TX</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="row mb-3">
+                            <div class="col-3 client_label">
+                                Job & Employment Law 
+                            </div>
+                            <div class="col star_ratings">
+                                <i class="fa fa-star star"></i>
+                                <i class="fa fa-star star"></i>
+                                <i class="fa fa-star star"></i>
+                                <i class="fa fa-star star"></i>
+                                <i class="fa fa-star star"></i>
+                            </div>
+                        </div>
+                        <div class="row client_review">
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..."
+                        </div>
+                        <div class="row text-end">
+                            <span class="review_link" onclick="openModal('read-review', null)"> Read Review <i class="fa fa-book-open"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--MAIN BODY END-->
+
+    <!--MODALS START-->
+    <div id="other-categories" class="local-modal">
+        <div class="local-modal-body">
+            <button onclick="closeModal()" class="local-modal-close">X</button>
+            <h1>OTHER CATEGORIES</h1>
+            <h6>Choose the category that best fits your case</h6>
+            <br/>
+            <div class="row">
+                <div class="col">
+                    <p><a href="#">Abuse (Child, Domestic, Sexual)</a></p>
+                    <p><a href="#">Agencies & Administration</a></p>
+                    <p><a href="#">Automobile ( DUI, Crimes, Speeding )</a></p>
+                    <p><a href="#">Automobile ( Accidents, Insurance )</a></p>
+                    <p><a href="#">Banking ( Business, Consumer )</a></p>
+                    <p><a href="#">Bars & Restaurants</a></p>
+                    <p><a href="#">Business Formation & Dissolution</a></p>
+                    <p><a href="#">Children (Adoption, Custody, Support)</a></p>
+                    <p><a href="#">Class Actions (Bad Drugs, Products)</a></p>
+                    <p><a href="#">Commercial Law and Contracts</a></p>
+                    <p><a href="#">Commercial Real Estate</a></p>
+                    <p><a href="#">Constitutional Law</a></p>
+                    <p><a href="#">Construction (Dispute, Liens)</a></p>
+                    <p><a href="#">Categories Item Here</a></p>
+                    <p><a href="#">Abuse (Child, Domestic, Sexual)</a></p>
+                    <p><a href="#">Agencies & Administration</a></p>
+                    <p><a href="#">Automobile ( DUI, Crimes, Speeding )</a></p>
+                    <p><a href="#">Automobile ( Accidents, Insurance )</a></p>
+                    <p><a href="#">Banking ( Business, Consumer )</a></p>
+                    <p><a href="#">Bars & Restaurants</a></p>
+                    <p><a href="#">Business Formation & Dissolution</a></p>
+                    <p><a href="#">Children (Adoption, Custody, Support)</a></p>
+                    <p><a href="#">Class Actions (Bad Drugs, Products)</a></p>
+                    <p><a href="#">Commercial Law and Contracts</a></p>
+                    <p><a href="#">Commercial Real Estate</a></p>
+                    <p><a href="#">Constitutional Law</a></p>
+                    <p><a href="#">Construction (Dispute, Liens)</a></p>
+                    <p><a href="#">Categories Item Here</a></p>
+                </div>
+                <div class="col">
+                    <p><a href="#">Abuse (Child, Domestic, Sexual)</a></p>
+                    <p><a href="#">Agencies & Administration</a></p>
+                    <p><a href="#">Automobile ( DUI, Crimes, Speeding )</a></p>
+                    <p><a href="#">Automobile ( Accidents, Insurance )</a></p>
+                    <p><a href="#">Banking ( Business, Consumer )</a></p>
+                    <p><a href="#">Bars & Restaurants</a></p>
+                    <p><a href="#">Business Formation & Dissolution</a></p>
+                    <p><a href="#">Children (Adoption, Custody, Support)</a></p>
+                    <p><a href="#">Class Actions (Bad Drugs, Products)</a></p>
+                    <p><a href="#">Commercial Law and Contracts</a></p>
+                    <p><a href="#">Commercial Real Estate</a></p>
+                    <p><a href="#">Constitutional Law</a></p>
+                    <p><a href="#">Construction (Dispute, Liens)</a></p>
+                    <p><a href="#">Categories Item Here</a></p>
+                    <p><a href="#">Abuse (Child, Domestic, Sexual)</a></p>
+                    <p><a href="#">Agencies & Administration</a></p>
+                    <p><a href="#">Automobile ( DUI, Crimes, Speeding )</a></p>
+                    <p><a href="#">Automobile ( Accidents, Insurance )</a></p>
+                    <p><a href="#">Banking ( Business, Consumer )</a></p>
+                    <p><a href="#">Bars & Restaurants</a></p>
+                    <p><a href="#">Business Formation & Dissolution</a></p>
+                    <p><a href="#">Children (Adoption, Custody, Support)</a></p>
+                    <p><a href="#">Class Actions (Bad Drugs, Products)</a></p>
+                    <p><a href="#">Commercial Law and Contracts</a></p>
+                    <p><a href="#">Commercial Real Estate</a></p>
+                    <p><a href="#">Constitutional Law</a></p>
+                    <p><a href="#">Construction (Dispute, Liens)</a></p>
+                    <p><a href="#">Categories Item Here</a></p>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <div id="main-categories" class="local-modal">
+        <div class="local-modal-body">
+            <button onclick="closeModal()" class="local-modal-close">X</button>
+            <p>
+                <span class="fa-stack fa-1x color_orange">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <strong class="fa-stack-1x text-light">3</strong>
+                </span>
+                Which <span class="fw-bolder" id="categoryName">&nbsp;</span> issue(s) apply to your case?
+            </p>
+            <br/>
+            <div class="row">
+                <div class="col">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                            Adoptions
+                        </li>
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                            Guardianship
+                        </li>
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                            Child Custody and Visitation
+                        </li>
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                            Paternity
+                        </li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                            Child Support
+                        </li>
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                            Separations
+                        </li>
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                            Divorce
+                        </li>
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                            Spousal Support or Alimony
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-5 mb-3 text-center">
+                <button type="button" class="btn btn-primary btn-lg rounded-pill fw-bolder">FIND A LAWYER NOW</button>
+            </div>
+        </div>
+    </div>
+    <div id="read-review" class="local-modal" style="padding: 50px 300px;">
+        <div class="local-modal-body">
+            <button onclick="closeModal()" class="local-modal-close">X</button>
+            <div class="row border_btm">
+                <h1>CLIENT REVIEWS</h1>
+            </div>
+            <br/>
+            <div class="row mb-3">
+                <div class="col-2">
+                    <div class="client_photo" style="background-image:url(img/client3.jpg)"></div>
+                </div>
+                <div class="col">
+                    <div>
+                        <h3 class="">Brigida R.</h3>
+                        <div class="">Dallas, TX</div>
+                        <div class="">Family Law</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row border_btm mb-3 pb-3">
+                <div class="col star_ratings">
+                    <span style="padding-right: 20px;"><strong><span class="h2">Rating</span> <span class="h4">(29 users)</span></strong></span>
+                    <i class="fa fa-star star"></i>
+                    <i class="fa fa-star star"></i>
+                    <i class="fa fa-star star"></i>
+                    <i class="fa fa-star star"></i>
+                    <i class="fa fa-star star_gray"></i>
+                </div>
+            </div>
+            <div class="row border_btm mb-3 pb-3 div_scroll">
+                <div class="row">
+                    <div class="col-6">
+                        <strong>Overall</strong>
+                    </div>
+                    <div class="col text-end">
+                        <i class="fa fa-star star"></i>
+                        <i class="fa fa-star star"></i>
+                        <i class="fa fa-star star"></i>
+                        <i class="fa fa-star star"></i>
+                        <i class="fa fa-star star"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        Responded in a timely manner
+                    </div>
+                    <div class="col text-end">
+                        <i class="fa fa-star star"></i>
+                        <i class="fa fa-star star"></i>
+                        <i class="fa fa-star star"></i>
+                        <i class="fa fa-star star"></i>
+                        <i class="fa fa-star star_gray"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        Answered questions clearly
+                    </div>
+                    <div class="col text-end">
+                        <i class="fa fa-star star"></i>
+                        <i class="fa fa-star star"></i>
+                        <i class="fa fa-star star"></i>
+                        <i class="fa fa-star star"></i>
+                        <i class="fa fa-star star"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        Understood needs
+                    </div>
+                    <div class="col text-end">
+                        <i class="fa fa-star star"></i>
+                        <i class="fa fa-star star"></i>
+                        <i class="fa fa-star star"></i>
+                        <i class="fa fa-star star"></i>
+                        <i class="fa fa-star star_gray"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        Gave complete and clear information
+                    </div>
+                    <div class="col text-end">
+                        <i class="fa fa-star star"></i>
+                        <i class="fa fa-star star"></i>
+                        <i class="fa fa-star star"></i>
+                        <i class="fa fa-star star"></i>
+                        <i class="fa fa-star star"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        Knowledgeable in legal area
+                    </div>
+                    <div class="col text-end">
+                        <i class="fa fa-star star"></i>
+                        <i class="fa fa-star star"></i>
+                        <i class="fa fa-star star"></i>
+                        <i class="fa fa-star star"></i>
+                        <i class="fa fa-star star_gray"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        Good value for money
+                    </div>
+                    <div class="col text-end">
+                        <i class="fa fa-star star"></i>
+                        <i class="fa fa-star star"></i>
+                        <i class="fa fa-star star"></i>
+                        <i class="fa fa-star star"></i>
+                        <i class="fa fa-star star"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        Would hire again
+                    </div>
+                    <div class="col text-end">
+                        <i class="fa fa-star star"></i>
+                        <i class="fa fa-star star"></i>
+                        <i class="fa fa-star star"></i>
+                        <i class="fa fa-star star"></i>
+                        <i class="fa fa-star star_gray"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        Would recommend to friend
+                    </div>
+                    <div class="col text-end">
+                        <i class="fa fa-star star"></i>
+                        <i class="fa fa-star star"></i>
+                        <i class="fa fa-star star"></i>
+                        <i class="fa fa-star star"></i>
+                        <i class="fa fa-star star"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3 pb-3">
+                <div class="row">
+                    <div class="col text-start">
+                        <i class="fa fa-star star"></i>
+                        <i class="fa fa-star star"></i>
+                        <i class="fa fa-star star"></i>
+                        <i class="fa fa-star star"></i>
+                        <i class="fa fa-star star"></i>
+                        <strong>by Dexter Marchal, 06/10/2016</strong>
+                    </div>
+                </div>
+                <div class="row">
+                    Deb did a great job. Got my bench warrant set aside... was sure I was going to jail... phew. Judge seemed to respect her and I got what I...
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <!--MODALS END-->
+
+    <!--FOOTER START-->
+    <footer class="footer">
+        <div class="row pt-3 mb-3">
+            <div class="col-3 footer_logo">
+                <a href="https://www.legalmatch.com/" class="logo_link">
+                    <img src="img/footer_logo.svg" class="logo_image" alt="LegalMatch Logo">
+                </a>
+            </div>
+            <div class="col-6">
+                <div class="row">&nbsp;</div>
+                <div class="row text-center align-middle">
+                    <div class="col-2 p-0">&nbsp;</div>
+                    <div class="col-2 p-0"><a href="#" class="footer_item footer_item_link">User Agreement</a></div>
+                    <div class="col-1 p-0"><a href="#" class="footer_item footer_item_link">&bullet;</a></div>
+                    <div class="col-2 p-0"><a href="#" class="footer_item footer_item_link">Privacy Policy</a></div>
+                    <div class="col-1 p-0"><a href="#" class="footer_item footer_item_link">&bullet;</a></div>
+                    <div class="col-2 p-0"><a href="#" class="footer_item footer_item_link">Site Map</a></div>
+                    <div class="col-2 p-0">&nbsp;</div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="cert_icon">
+                    <img style="border: none" src="./img/trustarc.svg" alt="TRUSTe">
+                </div>
+            </div>
+        </div>
+        <div class="row copyright">
+            <div>Copyright 1999-2016 LegalMatch. All rights reserved. LegalMatch<sup>&copy;</sup>,</div>
+            <div>the LegalMatch logo, and the tradedress are trademarks of LegalMatch. Patents Pending.</div>
+        </div>
+        <hr/>
+    </footer>
+    <!--FOOTER END-->
+</body>
+</html>

@@ -1,0 +1,31 @@
+.local-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    background-color: rgba(0, 0, 0, .75);
+    padding: 50px 250px;
+    overflow-y: initial !important;
+}
+
+.local-modal.open {
+    display: block;
+}
+
+.local-modal-body {
+    padding: 20px;
+    background: #fff;
+    border-radius: 25px;
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
+}
+
+.local-modal-close {
+    color: gray;
+    background: none;
+    border: 0px;
+    font-weight: lighter;
+    font-size: xx-large;
+    cursor: pointer;
+    float: right;
+  }
